@@ -4,10 +4,10 @@ import ContactForm from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
 import SearschBox from "./SearchBox/SearschBox";
 import InitialContacts from "./InitialContacts.json";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
-  // const [contactList, setContactList] = useState(InitialContacts);
-
   const [contactList, setContactList] = useState(() => {
     const localContacts = JSON.parse(localStorage.getItem("contactlist"));
     if (localContacts !== null) {
@@ -39,10 +39,12 @@ function App() {
 
   return (
     <>
-      <h1>Phonebook</h1>
-      <ContactForm onAdd={addContact} />
-      <SearschBox filter={filter} onSearch={setFilter} />
-      <ContactList contactList={visibleContacts} onDelete={deleteContact} />
+      <Provider store={store}>
+        <h1>Phonebook</h1>
+        <ContactForm onAdd={addContact} />
+        {/* <SearschBox filter={filter} onSearch={setFilter} /> */}
+        <ContactList contactList={visibleContacts} onDelete={deleteContact} />
+      </Provider>
     </>
   );
 }

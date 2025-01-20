@@ -1,6 +1,7 @@
 import s from "./Contact.module.css";
 import { FaUserAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Contact = ({ id, name, number, onDelete }) => {
   return (

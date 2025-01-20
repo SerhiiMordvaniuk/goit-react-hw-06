@@ -1,5 +1,6 @@
 import s from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
+import { useSelector } from "react-redux";
 
 const ContactList = ({ contactList, onDelete }) => {
   return (
