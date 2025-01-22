@@ -20,13 +20,14 @@ const validationSchema = Yup.object().shape({
     .required("Це поле має бути заповнено"),
 });
 
-const ContactForm = ({ onAdd }) => {
+const ContactForm = () => {
   const nameId = useId();
   const numberId = useId();
 
   const handleSubmit = (values, actions) => {
     actions.resetForm();
-    onAdd({ id: nanoid(), name: values.name, number: values.number });
+    // const onAdd = ({ id: nanoid(), name: values.name, number: values.number });
+    console.log("add");
   };
 
   return (
