@@ -3,12 +3,14 @@ import s from "./ContactForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { nanoid } from "nanoid";
 import * as Yup from "yup";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addContact } from "../redux/contactsSlice";
 
 const initialValues = {
   name: "",
   number: "",
 };
+
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Має бути мінімум три символи!")
@@ -24,10 +26,14 @@ const ContactForm = () => {
   const nameId = useId();
   const numberId = useId();
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
     actions.resetForm();
-    // const onAdd = ({ id: nanoid(), name: values.name, number: values.number });
-    console.log("add");
+
+    dispatch(
+      addContact({ id: nanoid(), name: values.name, number: values.number })
+    );
   };
 
   return (

@@ -2,15 +2,16 @@ import s from "./Contact.module.css";
 import { FaUserAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteContact } from "../redux/contactsSlice";
+// import { deleteContact } from "../redux/contactsSlice";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
+
   const handleClick = (id) => {
-    dispatch({
-      type: "DELETE",
-      payload: id,
-    });
+    dispatch(deleteContact(id));
   };
+
   return (
     <>
       <div className={s.item}>

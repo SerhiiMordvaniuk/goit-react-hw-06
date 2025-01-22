@@ -3,7 +3,7 @@ import Contact from "../Contact/Contact";
 import { useSelector } from "react-redux";
 
 const ContactList = () => {
-  const contactList = useSelector((store) => store.contactList.contactList);
+  const contactList = useSelector((state) => state.contactList.contactList);
   return (
     <>
       <ul className={s.list}>
