@@ -11,7 +11,7 @@ function App() {
       <Provider store={store}>
         <h1>Phonebook</h1>
         <ContactForm />
-        {/* <SearschBox filter={filter} onSearch={setFilter} /> */}
+        <SearschBox />
         <ContactList />
       </Provider>
     </>
