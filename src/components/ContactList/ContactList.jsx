@@ -7,8 +7,10 @@ const ContactList = () => {
   const contactList = useSelector((state) => state.contactList.contactList);
   const filter = useSelector(filterName);
 
-  const visibleContacts = contactList.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+  const visibleContacts = contactList.filter(
+    (contact) =>
+      contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+      contact.number.includes(filter)
   );
 
   return (
