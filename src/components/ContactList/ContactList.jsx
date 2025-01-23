@@ -15,15 +15,19 @@ const ContactList = () => {
 
   return (
     <>
-      <ul className={s.list}>
-        {visibleContacts.map((item) => {
-          return (
-            <li key={item.id}>
-              <Contact id={item.id} name={item.name} number={item.number} />
-            </li>
-          );
-        })}
-      </ul>
+      {visibleContacts.length > 0 ? (
+        <ul className={s.list}>
+          {visibleContacts.map((item) => {
+            return (
+              <li key={item.id}>
+                <Contact id={item.id} name={item.name} number={item.number} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p className={s.txt}>No contacts</p>
+      )}
     </>
   );
 };
