@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
 import SearschBox from "./SearchBox/SearschBox";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "../redux/store";
 
 function App() {
   return (

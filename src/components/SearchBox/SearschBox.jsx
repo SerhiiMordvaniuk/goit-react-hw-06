@@ -1,7 +1,7 @@
 import React, { useId } from "react";
 import s from "./SearschBox.module.css";
 import { useDispatch } from "react-redux";
-import { changeFilter } from "../redux/filtersSlice";
+import { changeFilter } from "../../redux/filtersSlice";
 
 const SearschBox = () => {
   const id = useId();
