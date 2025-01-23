@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import { useId } from "react";
 import s from "./ContactForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { nanoid } from "nanoid";
