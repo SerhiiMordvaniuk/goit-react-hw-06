@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { filterName } from "../../redux/filtersSlice";
 
 const ContactList = () => {
-  const contactList = useSelector((state) => state.contactList.contactList);
+  const contactList = useSelector((state) => state.contacts.contacts);
   const filter = useSelector(filterName);
 
   const visibleContacts = contactList.filter(
